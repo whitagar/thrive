@@ -69,24 +69,44 @@ export default function Header(props) {
   const darkBrandComponent = (
     <Link href="/">
       <Button className={classes.title}>
-        <Image
-          src="/img/thrive_media_logo.png"
-          width={150}
-          height={150}
-          id="thrive-logo"
-        />
+        <Hidden smDown implementation="css">
+          <Image
+            src="/img/thrive_media_logo.png"
+            width={150}
+            height={150}
+            id="thrive-logo"
+          />
+        </Hidden>
+        <Hidden mdUp implementation="css">
+          <Image
+            src="/img/thrive_wide_logo.png"
+            width={150}
+            height={75}
+            id="thrive-logo"
+          />
+        </Hidden>
       </Button>
     </Link>
   );
   const brandComponent = (
     <Link href="/">
       <Button className={classes.title}>
-        <Image
-          src="/img/thrive_white_letters_logo.png"
-          width={150}
-          height={150}
-          id="thrive-logo"
-        />
+        <Hidden smDown implementation="css">
+          <Image
+            src="/img/thrive_white_letters_logo.png"
+            width={150}
+            height={150}
+            id="thrive-logo"
+          />
+        </Hidden>
+        <Hidden mdUp implementation="css">
+          <Image
+            src="/img/thrive_white_wide_logo.png"
+            width={150}
+            height={75}
+            id="thrive-logo"
+          />
+        </Hidden>
       </Button>
     </Link>
   );
