@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 // nodejs library that concatenates classes
 import classNames from "classnames";
@@ -16,10 +16,13 @@ import Drawer from "@material-ui/core/Drawer";
 import Menu from "@material-ui/icons/Menu";
 // core components
 import styles from "/styles/jss/nextjs-material-kit/components/headerStyle.js";
+import Image from "next/image";
 
 const useStyles = makeStyles(styles);
 
 export default function Header(props) {
+  const [isHeaderColorChangeApplied, setIsHeaderColorChangeApplied] =
+    useState(false);
   const classes = useStyles();
   const [mobileOpen, setMobileOpen] = React.useState(false);
   React.useEffect(() => {
@@ -45,6 +48,7 @@ export default function Header(props) {
       document.body
         .getElementsByTagName("header")[0]
         .classList.add(classes[changeColorOnScroll.color]);
+      setIsHeaderColorChangeApplied(true);
     } else {
       document.body
         .getElementsByTagName("header")[0]
@@ -52,6 +56,7 @@ export default function Header(props) {
       document.body
         .getElementsByTagName("header")[0]
         .classList.remove(classes[changeColorOnScroll.color]);
+      setIsHeaderColorChangeApplied(false);
     }
   };
   const { color, rightLinks, leftLinks, brand, fixed, absolute } = props;
@@ -59,11 +64,30 @@ export default function Header(props) {
     [classes.appBar]: true,
     [classes[color]]: color,
     [classes.absolute]: absolute,
-    [classes.fixed]: fixed
+    [classes.fixed]: fixed,
   });
+  const darkBrandComponent = (
+    <Link href="/">
+      <Button className={classes.title}>
+        <Image
+          src="/img/thrive_media_logo.png"
+          width={150}
+          height={150}
+          id="thrive-logo"
+        />
+      </Button>
+    </Link>
+  );
   const brandComponent = (
-    <Link href="/components" as="/components">
-      <Button className={classes.title}>{brand}</Button>
+    <Link href="/">
+      <Button className={classes.title}>
+        <Image
+          src="/img/thrive_white_letters_logo.png"
+          width={150}
+          height={150}
+          id="thrive-logo"
+        />
+      </Button>
     </Link>
   );
   return (
@@ -75,6 +99,8 @@ export default function Header(props) {
             <Hidden smDown implementation="css">
               {leftLinks}
             </Hidden>
+          ) : isHeaderColorChangeApplied ? (
+            darkBrandComponent
           ) : (
             brandComponent
           )}
@@ -98,7 +124,7 @@ export default function Header(props) {
           anchor={"right"}
           open={mobileOpen}
           classes={{
-            paper: classes.drawerPaper
+            paper: classes.drawerPaper,
           }}
           onClose={handleDrawerToggle}
         >
@@ -113,7 +139,7 @@ export default function Header(props) {
 }
 
 Header.defaultProp = {
-  color: "white"
+  color: "white",
 };
 
 Header.propTypes = {
@@ -126,7 +152,7 @@ Header.propTypes = {
     "transparent",
     "white",
     "rose",
-    "dark"
+    "dark",
   ]),
   rightLinks: PropTypes.node,
   leftLinks: PropTypes.node,
@@ -150,7 +176,7 @@ Header.propTypes = {
       "transparent",
       "white",
       "rose",
-      "dark"
-    ]).isRequired
-  })
+      "dark",
+    ]).isRequired,
+  }),
 };

@@ -20,18 +20,18 @@ export default function Footer(props) {
   const { whiteFont } = props;
   const footerClasses = classNames({
     [classes.footer]: true,
-    [classes.footerWhiteFont]: whiteFont
+    [classes.footerWhiteFont]: whiteFont,
   });
   const aClasses = classNames({
     [classes.a]: true,
-    [classes.footerWhiteFont]: whiteFont
+    [classes.footerWhiteFont]: whiteFont,
   });
   return (
     <footer className={footerClasses}>
       <div className={classes.container}>
         <div className={classes.left}>
           <List className={classes.list}>
-            <ListItem className={classes.inlineBlock}>
+            {/* <ListItem className={classes.inlineBlock}>
               <a
                 href="https://www.creative-tim.com/?ref=njsmk-footer"
                 className={classes.block}
@@ -66,20 +66,27 @@ export default function Footer(props) {
               >
                 Licenses
               </a>
+            </ListItem> */}
+            <ListItem className={classes.inlineBlock}>
+              <a href="/" className={classes.block}>
+                Home
+              </a>
+            </ListItem>
+            <ListItem className={classes.inlineBlock}>
+              <a href="/#start" className={classes.block}>
+                Contact
+              </a>
+            </ListItem>
+            <ListItem className={classes.inlineBlock}>
+              <a href="/#start" className={classes.block}>
+                Get started
+              </a>
             </ListItem>
           </List>
         </div>
         <div className={classes.right}>
-          &copy; {1900 + new Date().getYear()} , made with{" "}
-          <Favorite className={classes.icon} /> by{" "}
-          <a
-            href="https://www.creative-tim.com?ref=njsmk-footer"
-            className={aClasses}
-            target="_blank"
-          >
-            Creative Tim
-          </a>{" "}
-          for a better web.
+          &copy; {1900 + new Date().getYear()} Thrive Media, made with{" "}
+          <Favorite className={classes.icon} />
         </div>
       </div>
     </footer>
@@ -87,5 +94,5 @@ export default function Footer(props) {
 }
 
 Footer.propTypes = {
-  whiteFont: PropTypes.bool
+  whiteFont: PropTypes.bool,
 };

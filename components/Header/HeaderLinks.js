@@ -26,7 +26,7 @@ export default function HeaderLinks(props) {
   const classes = useStyles();
   return (
     <List className={classes.list}>
-      <ListItem className={classes.listItem}>
+      {/* <ListItem className={classes.listItem}>
         <CustomDropdown
           noLiPadding
           navDropdown
@@ -69,6 +69,11 @@ export default function HeaderLinks(props) {
         >
           <CloudDownload className={classes.icons} /> Download
         </Button>
+      </ListItem> */}
+      <ListItem className={classes.listItem}>
+        <Button href="/#start" color="transparent" className={classes.navLink}>
+          Get started
+        </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
         {/*<Tooltip title="Delete">
@@ -83,7 +88,7 @@ export default function HeaderLinks(props) {
           classes={{ tooltip: classes.tooltip }}
         >
           <Button
-            href="https://twitter.com/CreativeTim?ref=creativetim"
+            href="#"
             target="_blank"
             color="transparent"
             className={classes.navLink}
@@ -101,7 +106,7 @@ export default function HeaderLinks(props) {
         >
           <Button
             color="transparent"
-            href="https://www.facebook.com/CreativeTim?ref=creativetim"
+            href="#"
             target="_blank"
             className={classes.navLink}
           >
@@ -118,7 +123,7 @@ export default function HeaderLinks(props) {
         >
           <Button
             color="transparent"
-            href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
+            href="#"
             target="_blank"
             className={classes.navLink}
           >

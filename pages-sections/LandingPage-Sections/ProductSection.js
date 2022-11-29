@@ -5,7 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
 import Chat from "@material-ui/icons/Chat";
 import VerifiedUser from "@material-ui/icons/VerifiedUser";
-import Fingerprint from "@material-ui/icons/Fingerprint";
+import Bars from "@material-ui/icons/SignalCellularAlt";
 // core components
 import GridContainer from "/components/Grid/GridContainer.js";
 import GridItem from "/components/Grid/GridItem.js";
@@ -21,13 +21,14 @@ export default function ProductSection() {
     <div className={classes.section}>
       <GridContainer justify="center">
         <GridItem xs={12} sm={12} md={8}>
-          <h2 className={classes.title}>Let{"'"}s talk product</h2>
+          <h2 className={classes.title}>Stress-free business growth.</h2>
           <h5 className={classes.description}>
-            This is the paragraph where you can write more details about your
-            product. Keep you user engaged by providing meaningful information.
-            Remember that by this time, the user is curious, otherwise he wouldn
-            {"'"}t scroll to get here. Add a button if you want the user to see
-            more.
+            Growing your business can be time consuming, stressful, and
+            confusing. Rather than trying to do it on your own or hiring an
+            in-house marketer, let our team of experts do the job for{" "}
+            <strong>less than half the price of a full time employee</strong>.
+            Our marketing and social media experts will help you every step of
+            the way.
           </h5>
         </GridItem>
       </GridContainer>
@@ -35,8 +36,8 @@ export default function ProductSection() {
         <GridContainer>
           <GridItem xs={12} sm={12} md={4}>
             <InfoArea
-              title="Free Chat"
-              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
+              title="Let's talk."
+              description="In just a quick 10 minute phone call, we can assess your business needs and determine the best strategy to help your business thrive."
               icon={Chat}
               iconColor="info"
               vertical
@@ -44,8 +45,8 @@ export default function ProductSection() {
           </GridItem>
           <GridItem xs={12} sm={12} md={4}>
             <InfoArea
-              title="Verified Users"
-              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
+              title="Start your campaign."
+              description="Once you approve, we will start working on your specific strategy to bring you more customers and more sales."
               icon={VerifiedUser}
               iconColor="success"
               vertical
@@ -53,9 +54,9 @@ export default function ProductSection() {
           </GridItem>
           <GridItem xs={12} sm={12} md={4}>
             <InfoArea
-              title="Fingerprint"
-              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
-              icon={Fingerprint}
+              title="Thrive."
+              description="Enjoy the benefits of social media marketing, and watch your busines thrive like never before."
+              icon={Bars}
               iconColor="danger"
               vertical
             />
